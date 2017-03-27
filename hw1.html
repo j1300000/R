@@ -123,7 +123,7 @@ $(document).ready(function () {
 
 
 <div id="students.csv" class="section level2">
-<h2>students.csv</h2>
+<h2>讀取students.csv</h2>
 <pre class="r"><code>students&lt;- read.csv(&quot;C:/Users/user/Desktop/students.csv&quot;)
 knitr::kable(students)</code></pre>
 <table>
@@ -1357,7 +1357,7 @@ knitr::kable(students)</code></pre>
 </tbody>
 </table>
 <div class="section level3">
-<h3>社會科學院歷年學生人數的最大值、最小值及中位數</h3>
+<h3>一、社會科學院歷年學生人數的最大值、最小值及中位數</h3>
 <pre class="r"><code>mmm &lt;- c(maximum=max(students$社科院),minimum=min(students$社科院),median=median(students$社科院))
 knitr::kable(mmm)</code></pre>
 <table>
@@ -1378,7 +1378,7 @@ knitr::kable(mmm)</code></pre>
 </table>
 </div>
 <div id="20012015" class="section level3">
-<h3>社科院、文學院、工學院及管理學院從2001到2015年的學生人數資料</h3>
+<h3>二、社科院、文學院、工學院及管理學院從2001到2015年的學生人數資料</h3>
 <pre class="r"><code>elite&lt;-data.frame(students[students$年度&gt;= 2001 &amp; students$年度 &lt;= 2015,c(&quot;社科院&quot;,&quot;文學院&quot;,&quot;工學院&quot;,&quot;管理學院&quot;)], row.names = 2001:2015)
 knitr::kable(elite)</code></pre>
 <table>
@@ -1501,7 +1501,7 @@ knitr::kable(elite)</code></pre>
 </table>
 </div>
 <div id="20012015" class="section level3">
-<h3>承上，四個學院從2001年到2015年各年學生加總人數及各年四學院的平均人數</h3>
+<h3>三、承上，四個學院從2001年到2015年各年學生加總人數及各年四學院的平均人數</h3>
 <pre class="r"><code>tt&lt;- data.frame(cbind(elite, &quot;加總人數&quot;=apply(elite,1,sum),&quot;平均人數&quot;=apply(elite,1,mean)))
 knitr::kable(tt)</code></pre>
 <table>
